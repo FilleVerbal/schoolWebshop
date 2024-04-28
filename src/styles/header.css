@@ -1,0 +1,35 @@
+header {
+    display: flex; 
+    flex-direction: column;
+    padding: 1rem 2rem; 
+    background-color: #d1d1d1;
+  }
+  
+  .header-top-row {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 1rem; 
+  }
+  .header-bottom-row {
+    display: flex; 
+    justify-content: space-around;
+  }
+  
+  .header-bottom-row button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #434242;
+    border-radius: 4px;
+    background-color: #ffffff;
+    cursor: pointer;
+    background-color: aliceblue;
+    border-radius: 10px;
+    color: blue;
+  }
+  
+  .header-bottom-row input {
+    padding: 0.5rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+  }

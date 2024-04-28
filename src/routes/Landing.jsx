@@ -1,9 +1,33 @@
+import { useState, useEffect } from "react"
+import MainCardDisplay from "../components/MainCardDisplay";
+import Header from "../components/Header";
+import { getTheMerch } from "../data/crud";
+import "../styles/landing.css"
 
+const Landing = () => {
+    const [merchItems, setMerchItems] = useState([]);
 
-const Landing = () =>{
+    useEffect(() => {
+        const fetchData = async () => {
+            const fetchedItems = await getTheMerch();
+            setMerchItems(fetchedItems)
+        }
+        fetchData()
+    }, []);
 
     return (
-        <h2>peppe le pewpew</h2>
+        <section>
+            <Header />
+            <div className="landing-page">
+                <div className="merch-display">
+                    {merchItems.map((item) => (
+                        <MainCardDisplay key={item.id} merchItem={item} />
+                    ))}
+
+                </div>
+            </div>
+
+        </section>
     )
 }
 
