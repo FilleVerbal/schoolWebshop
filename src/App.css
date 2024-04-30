@@ -11,9 +11,9 @@
 * {
 	box-sizing: border-box;
 }
-html {
+/* html {
     margin: 0 auto;
-}
+} */
 
 body {
     display: flex;
@@ -24,5 +24,5 @@ body {
 	padding: 0;
     width: 100vw;
 	max-width: 800px;
-	margin: 0 auto;
+	margin: auto 0 ;
 }

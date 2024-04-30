@@ -24,3 +24,9 @@
     background-color: aliceblue;
     border-radius: 10px;
 }
+.price-container {
+    background-color: antiquewhite;
+    max-width: fit-content;
+    margin: 0 auto;
+    align-self: auto;
+}

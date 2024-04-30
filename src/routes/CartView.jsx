@@ -1,11 +1,22 @@
-
+import Header from "../components/Header";
+import { useStore } from "../data/store";
 
 const CartView = () => {
+    const { cartItems } = useStore();
 
     return (
-        <div>
+        <section>
+            <Header />
+            <div className="cart-page">
+                <p className="top-text"> Dina valda varor </p>
 
-        </div>
+                <div className="bottom-container">
+                    <p> </p>
+
+                </div>
+            </div>
+
+        </section>
     )
 }
 export default CartView;

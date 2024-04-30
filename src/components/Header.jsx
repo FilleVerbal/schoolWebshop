@@ -3,7 +3,7 @@ import "../styles/header.css"
 const Header = () => {
 
     return(
-        <header className="the-header">
+        <nav className="the-header">
             <div className="header-top-row">
                 <button> Logo placeholder </button>
                 <button> Cart placeholder </button>
@@ -13,7 +13,7 @@ const Header = () => {
                <input type="text" placeholder="Sök produkt" /> 
                <button> Sort by price </button>
             </div>
-        </header>
+        </nav>
     )
 }
 export default Header
