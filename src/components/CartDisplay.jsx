@@ -1,7 +1,16 @@
 import "../styles/cartDisplay.css"
+import { useStore } from "../data/store";
 
-const CartDisplay = ({merchItem}) => {
+const CartDisplay = ({merchItem, quantity}) => {
     const { name, description, category, price, image} = merchItem;
+    const { addCartItem, removeCartItem  } = useStore();
+    
+    const removeHandler = () => {
+        removeCartItem(merchItem.id)
+    }
+    const addHandler = () => {
+        addCartItem(merchItem)
+    }
 
     return(
         <div className="cart-card">
@@ -11,11 +20,13 @@ const CartDisplay = ({merchItem}) => {
             <div className="cart-info-div">
                 <h3>{name}</h3>
                 <p>{description}</p>
-                <div className="price-container"> <span>{price}kr </span></div>
                 {/* <span>{category}</span> */}
             </div>
+            <div className="price-container"> <span>{price}kr </span></div>
             <div className="more-less-button-div">
-                <button> plus minus här </button>
+                <button className="minus-btn" onClick={removeHandler}> minus </button>
+                <> {quantity} </>
+                <button className="plus-btn" onClick={addHandler}> plus </button>
             </div>
 
 

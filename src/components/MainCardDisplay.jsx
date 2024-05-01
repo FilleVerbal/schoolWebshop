@@ -8,7 +8,7 @@ const MainCardDisplay = ({merchItem}) => {
         addCartItem(merchItem)
         console.log("köp tryckt och detta blev tillagt: ", merchItem);
     }
-    
+
     return(
         <div className="merch-card">
             <img src={image} alt={name} />
