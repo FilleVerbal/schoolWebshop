@@ -8,6 +8,24 @@ const useStore = create(set => ({
     addMerchItem: merchItem => set(state => ({
         merch: [...state.merch, merchItem]
     })),
+    sortMerchAlphabetically: () => [...useStore.getState().merch].sort((a,b) => {
+        if (a.name < b.name) {
+            return -1;
+        } else if (a.name > b.name) {
+            return 1
+        } else {
+            return 0;
+        }    
+    }),
+    sortMerchByPrice: () => [...useStore.getState().merch].sort((a, b) => a.price - b.price),
+    sortMerch: (sortBy) => {
+        const sortedItems = sortBy === "alphabet"
+        ? useStore.getState().sortMerchAlphabetically()
+        : useStore.getState().sortMerchByPrice()
+        set(state => ({
+            merch: sortedItems
+        }))
+    },
     cartItems: [],
     addCartItem: (item) => set(state => ({
         cartItems: [...state.cartItems, item]

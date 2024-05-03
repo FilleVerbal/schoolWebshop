@@ -4,6 +4,8 @@ import CartView from './CartView.jsx';
 import PayForm from './PayForm.jsx';
 import AdminLogin from './AdminLogin.jsx';
 import Landing from './Landing.jsx';
+import EditMerchPage from './EditMerchPage.jsx';
+import AddItemForm from './AddItemForm.jsx';
 
 const router = createHashRouter([
 	{
@@ -29,6 +31,14 @@ const router = createHashRouter([
 			{
 				path: '/adminlogin',
 				element: <AdminLogin />
+			},
+			{
+				path: '/editmerchpage',
+				element: <EditMerchPage />
+			},
+			{
+				path: '/additemform',
+				element: <AddItemForm />
 			},
 			{
 				index: true,

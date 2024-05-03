@@ -1,0 +1,6 @@
+.edit-merch-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}

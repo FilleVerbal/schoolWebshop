@@ -3,9 +3,9 @@
 const AdminLogin = () => {
 
     return (
-        <div>
+        <section className="admin-page" >
 
-        </div>
+        </section>
     )
 }
 export default AdminLogin;

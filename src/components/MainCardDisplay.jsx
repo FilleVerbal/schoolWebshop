@@ -2,7 +2,7 @@ import "../styles/mainCarddisplay.css"
 import { useStore } from "../data/store";
 
 const MainCardDisplay = ({merchItem}) => {
-    const { name, description, category, price, image} = merchItem;
+    const { name, description, category, price, image, key} = merchItem;
     const { addCartItem } = useStore()
     const buyHandler = () => {
         addCartItem(merchItem)
@@ -10,7 +10,7 @@ const MainCardDisplay = ({merchItem}) => {
     }
 
     return(
-        <div className="merch-card">
+        <div className="merch-card" key={key}>
             <img src={image} alt={name} />
             <h3>{name}</h3>
             <p>{description}</p>

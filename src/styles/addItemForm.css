@@ -1,0 +1,24 @@
+.add-item-form-page {
+    display: flex;
+    flex-direction: column;
+}
+.add-item-form-page button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #434242;
+    border-radius: 4px;
+    background-color: #ffffff;
+    cursor: pointer;
+    background-color: aliceblue;
+    border-radius: 10px;
+    color: blue;
+}
+.add-item-form-page input {
+    padding: 0.5rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.add-item-form-page label {
+    margin: 20px;
+}
