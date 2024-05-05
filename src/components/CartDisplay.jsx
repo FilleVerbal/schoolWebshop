@@ -1,12 +1,12 @@
 import "../styles/cartDisplay.css"
 import { useStore } from "../data/store";
 
-const CartDisplay = ({merchItem}) => {
+const CartDisplay = ({merchItem, index}) => {
     const { name, description, category, price, image, key} = merchItem;
     const { removeCartItem, cartItems } = useStore();
     
     const removeHandler = () => {
-        removeCartItem(merchItem)
+        removeCartItem(index)
     }
 
     return(

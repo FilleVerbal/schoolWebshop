@@ -23,7 +23,7 @@ const Header = () => {
             </div>
             <div className="header-bottom-row">
                <button onClick={alphaSorter} disabled={!isLanding} > Sortera A-Z </button>
-               <input type="text" placeholder="Sök produkt" /> 
+               {/* <input type="text" placeholder="Sök produkt" />  */}
                <button onClick={priceSorter} disabled={!isLanding} > Sortera pris </button>
             </div>
         </nav>

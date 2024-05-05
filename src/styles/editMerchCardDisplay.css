@@ -30,3 +30,6 @@
     margin: 0 auto;
     align-self: auto;
 }
+.color-me {
+    color: var(--secondary-color);
+}

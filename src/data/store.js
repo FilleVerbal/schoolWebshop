@@ -8,6 +8,10 @@ const useStore = create(set => ({
     addMerchItemZ: merchItem => set(state => ({
         merch: [...state.merch, merchItem]
     })),
+    updateEditedMerch: (updatedItem) => set(state => {
+        const updatedMerch = state.merch.map((item) => item.key === updatedItem.key ? updatedItem : item)
+        return {merch: updatedMerch}
+    }),
     sortMerchAlphabetically: () => [...useStore.getState().merch].sort((a,b) => {
         if (a.name < b.name) {
             return -1;
@@ -30,9 +34,9 @@ const useStore = create(set => ({
     addCartItem: (item) => set(state => ({
         cartItems: [...state.cartItems, item]
     })),
-    removeCartItem: (itemId) => set(state => ({
-        cartItems: state.cartItems.filter(item => item.id !== itemId)
-    })),
+    removeCartItem: (index) => set(state => ({
+        cartItems: state.cartItems.slice(0, index).concat(state.cartItems.slice(index + 1)),
+      })),
     deleteMerchItemZ: (key) => { set(state => ({ merch: state.merch.filter(item => item.key !== key) })); }
 }))
 

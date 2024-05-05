@@ -1,5 +1,13 @@
+.add-item-form-page {
+    font-family: var(--font-family);
+}
 form {
-    margin-top: 5rem;
+    margin-top: 3rem;
+    color: var(--secondary-color);
+}
+.form-h {
+    margin-top: 1rem;
+    color: var(--secondary-color);
 }
 .add-item-form-page {
     display: flex;
@@ -9,17 +17,17 @@ form {
     padding: 0.5rem 1rem;
     border: 1px solid #434242;
     border-radius: 4px;
-    background-color: #ffffff;
     cursor: pointer;
-    background-color: aliceblue;
+    background-color: var(--secondary-color);
     border-radius: 10px;
-    color: blue;
+    color: var(--tertiary-color);
 }
 .add-item-form-page input {
     padding: 0.5rem 0.5rem;
     border: 1px solid #ccc;
     border-radius: 10px;
     text-align: center;
+    color: var(--secondary-color);
     /* margin-bottom: 2rem; */
 }
 .radio-input {
@@ -29,7 +37,7 @@ form {
     margin: 20px;
 }
 .warning-text {
-    color: rgb(248, 119, 119);
+    color: rgb(159, 77, 77);
     margin:0;
     visibility: hidden;
     margin-bottom: 2rem;

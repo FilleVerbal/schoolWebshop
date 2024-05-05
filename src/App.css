@@ -6,6 +6,13 @@
 	flex-direction: row;
 	height: 100vh;
 }
+:root {
+	--background-color: #ffbe0b;
+	--primary-color: #fb5607;
+	--secondary-color: #8338ec;
+	--tertiary-color: #f7ede2;
+	--font-family: "Chicle", serif;
+} 
 
 * {
 	box-sizing: border-box;
@@ -17,8 +24,8 @@
 body {
     display: flex;
 	flex-direction: row;
-	background-color: rgb(132, 131, 131);
-	color: rgb(255, 255, 255);
+	background-color: var(--background-color);
+	color: var(--tertiary-color);
 	line-height: 1.35rem;
 	padding: 0;
     width: 100vw;

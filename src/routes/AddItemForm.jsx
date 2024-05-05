@@ -9,7 +9,7 @@ const AddItemForm = () => {
     const [description, setDescription] = useState("")
     const [category, setCategory] = useState("")
     const [image, setImage] = useState("")
-    const [price, setPrice] = useState("")
+    const [price, setPrice] = useState(0)
     const { addMerchItemZ } = useStore()
     const navigate = useNavigate()
     //  test radioknapp
@@ -31,12 +31,13 @@ const AddItemForm = () => {
         setName("")
         setDescription("")
         setImage("")
-        setPrice("")
+        setPrice(0)
         navigate("/editmerchpage")
     }
 
     return (
         <section className="add-item-form-page">
+            <h2 className="form-h"> Lägg till produkt </h2>
             <form onSubmit={submitHandler}>
 
                 <p> Produktnamn </p>

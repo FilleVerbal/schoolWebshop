@@ -1,5 +1,6 @@
 .merch-card {
-    color: blue;
+    background-color: var(--tertiary-color) ;
+    color: var(--secondary-color);
     max-width: 20rem;
     display: flex;
     flex-direction: column;
@@ -9,9 +10,12 @@
     padding: 0.5rem;
     border: 1px solid #dddddd;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(230, 3, 196, 0.1);
     text-align: center;
     justify-content: space-between;
+}
+.color-me-text {
+    color: var(--secondary-color);
 }
 .merch-card img {
     width: 100%;
@@ -19,13 +23,16 @@
     max-width: 15rem;
     max-height: 15rem;
     object-fit: cover; 
+    border-radius: 10px;
+    box-shadow: 0 2px 5px purple;
 }
-.merch-card button {
-    background-color: aliceblue;
+.merch-card  button {
+    color: var(--secondary-color);
+    background-color: var(--tertiary-color);
     border-radius: 10px;
 }
 .price-container {
-    background-color: antiquewhite;
+    background-color: white;
     max-width: fit-content;
     margin: 0 auto;
     align-self: auto;

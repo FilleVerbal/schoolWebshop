@@ -3,19 +3,20 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    font-family: var(--font-family);
 }
 .link-text {
     text-decoration: none;
     color: inherit;
 }
 .add-new-merch-btn {
+    font-family: var(--font-family);
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     border: 1px solid #434242;
     border-radius: 4px;
-    background-color: #ffffff;
     cursor: pointer;
-    background-color: aliceblue;
+    background-color: var(--secondary-color);
     border-radius: 10px;
-    color: blue;
+    color: var(--tertiary-color);
 }
