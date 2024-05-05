@@ -10,7 +10,10 @@ const CartView = () => {
 
     return (
         <section>
+            <div className="header-box">
                 <Header />
+
+            </div>
             <div className="cart-page">
                 <p className="top-text regular-text"> Dina valda varor </p>
                 <div className="cart-cards-displayer">

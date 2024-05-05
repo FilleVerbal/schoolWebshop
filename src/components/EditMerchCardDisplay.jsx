@@ -5,9 +5,8 @@ import { useStore } from "../data/store";
 
 const EditMerchCardDisplay = ({merchItem}) => {
     const { name, description, category, price, image, key} = merchItem;
-    const [editItemId, setEditItemId] = useState({})
     const { deleteMerchItemZ } = useStore()
-    // const { deleteMerchItemZ } = useStore(state => ({ deleteMerchItemZ: state.deleteMerchItemZ}))
+    
     
     const deleteHandler = async () => {
         await deleteMerchItem(merchItem.key)

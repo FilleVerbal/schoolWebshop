@@ -1,3 +1,7 @@
+/* .header-box {
+    display: flex;
+    width: 800px;
+} */
 .cart-page {
     display: flex;
     flex-direction: column;
