@@ -1,5 +1,5 @@
 .the-header {
-    width:100%;
+    width: 100%;
     position: sticky;
     top: 0;
     display: flex; 
@@ -7,7 +7,8 @@
     padding: 1rem 2rem; 
     background-color: #d1d1d1;
     border-radius: 0 0 10px 10px;
-    flex-grow: 1;
+    flex-shrink: 1;
+    /* flex-grow: 1; */
   }
   
   .header-top-row {
@@ -37,4 +38,9 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     text-align: center;
+    flex-shrink: 1;
+  }
+  .header-link-text {
+    text-decoration: none;
+    color: inherit;
   }

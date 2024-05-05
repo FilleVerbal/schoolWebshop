@@ -5,7 +5,7 @@ const useStore = create(set => ({
     setMerch: newMerch => set(state => ({
         merch: newMerch
     })),
-    addMerchItem: merchItem => set(state => ({
+    addMerchItemZ: merchItem => set(state => ({
         merch: [...state.merch, merchItem]
     })),
     sortMerchAlphabetically: () => [...useStore.getState().merch].sort((a,b) => {
@@ -33,6 +33,7 @@ const useStore = create(set => ({
     removeCartItem: (itemId) => set(state => ({
         cartItems: state.cartItems.filter(item => item.id !== itemId)
     })),
+    deleteMerchItemZ: (key) => { set(state => ({ merch: state.merch.filter(item => item.key !== key) })); }
 }))
 
 export { useStore }

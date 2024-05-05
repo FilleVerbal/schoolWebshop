@@ -1,3 +1,6 @@
+form {
+    margin-top: 5rem;
+}
 .add-item-form-page {
     display: flex;
     flex-direction: column;
@@ -17,8 +20,20 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     text-align: center;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
+}
+.radio-input {
+    margin-bottom: 3rem;
 }
 .add-item-form-page label {
     margin: 20px;
+}
+.warning-text {
+    color: rgb(248, 119, 119);
+    margin:0;
+    visibility: hidden;
+    margin-bottom: 2rem;
+}
+input:invalid + .warning-text {
+    visibility: visible;
 }

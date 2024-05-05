@@ -15,7 +15,7 @@ const Landing = () => {
         }
         fetchData()
     }, []);
-    // console.log("landing merch är: ", merch.map((item) => item.id));
+
     return (
         <section>
             <Header />

@@ -1,11 +1,12 @@
 import "../styles/header.css"
 import { useStore } from "../data/store"
-import { useLocation } from "react-router-dom"
+import { useLocation, Link } from "react-router-dom"
 
 const Header = () => {
     const { sortMerch } = useStore();
     const location = useLocation();
     const isLanding = location.pathname === "/"
+    const isCartView = location.pathname ==="/cartview"
 
     const alphaSorter = () => {
         sortMerch("alphabet")
@@ -17,8 +18,8 @@ const Header = () => {
     return(
         <nav className="the-header">
             <div className="header-top-row">
-                <button> Logo placeholder </button>
-                <button> Cart placeholder </button>
+                <button> <Link to="/" className="header-link-text"> Till Butiken </Link>  </button>
+                <button> <Link to="/cartview" className="header-link-text"> Till Varukorgen </Link>  </button>
             </div>
             <div className="header-bottom-row">
                <button onClick={alphaSorter} disabled={!isLanding} > Sortera A-Z </button>

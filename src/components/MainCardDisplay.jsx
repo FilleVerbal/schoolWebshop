@@ -3,10 +3,11 @@ import { useStore } from "../data/store";
 
 const MainCardDisplay = ({merchItem}) => {
     const { name, description, category, price, image, key} = merchItem;
-    const { addCartItem } = useStore()
+    const { addCartItem, cartItems } = useStore(state => ({addCartItem: state.addCartItem, cartItems: state.cartItems}))
     const buyHandler = () => {
-        addCartItem(merchItem)
+        addCartItem(merchItem);
         console.log("köp tryckt och detta blev tillagt: ", merchItem);
+        console.log("cartItems är: ", cartItems)
     }
 
     return(

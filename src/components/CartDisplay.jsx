@@ -1,35 +1,23 @@
 import "../styles/cartDisplay.css"
 import { useStore } from "../data/store";
 
-const CartDisplay = ({merchItem, quantity}) => {
-    const { name, description, category, price, image} = merchItem;
-    const { addCartItem, removeCartItem  } = useStore();
+const CartDisplay = ({merchItem}) => {
+    const { name, description, category, price, image, key} = merchItem;
+    const { removeCartItem, cartItems } = useStore();
     
     const removeHandler = () => {
-        removeCartItem(merchItem.id)
-    }
-    const addHandler = () => {
-        addCartItem(merchItem)
+        removeCartItem(merchItem)
     }
 
     return(
-        <div className="cart-card">
-            <div className="image-container">
-                <img src={image} alt={name} />
-            </div>
-            <div className="cart-info-div">
-                <h3>{name}</h3>
-                <p>{description}</p>
-                {/* <span>{category}</span> */}
-            </div>
+        <div className="merch-card">
+            {console.log("cartitems i display", cartItems)}
+            <img src={image} alt={name} />
+            <h3>{name}</h3>
+            <p>{description}</p>
+            <span>{category.charAt(0).toUpperCase() + category.slice(1)}</span>
             <div className="price-container"> <span>{price}kr </span></div>
-            <div className="more-less-button-div">
-                <button className="minus-btn" onClick={removeHandler}> minus </button>
-                <> {quantity} </>
-                <button className="plus-btn" onClick={addHandler}> plus </button>
-            </div>
-
-
+            <button onClick={removeHandler}> Ta bort </button>
 
         </div>
     )

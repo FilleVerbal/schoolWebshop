@@ -1,7 +1,8 @@
 import { addMerch } from "../data/crud";
 import { useState } from "react";
+import { useStore } from "../data/store";
+import { useNavigate } from "react-router-dom";
 import "../styles/addItemForm.css"
-
 
 const AddItemForm = () => {
     const [name, setName] = useState("")
@@ -9,6 +10,8 @@ const AddItemForm = () => {
     const [category, setCategory] = useState("")
     const [image, setImage] = useState("")
     const [price, setPrice] = useState("")
+    const { addMerchItemZ } = useStore()
+    const navigate = useNavigate()
     //  test radioknapp
     const categoryHandler = e => {
         setCategory(e.target.value)
@@ -24,10 +27,12 @@ const AddItemForm = () => {
             price
         }
         addMerch(merchItem)
+        addMerchItemZ(merchItem)
         setName("")
         setDescription("")
         setImage("")
         setPrice("")
+        navigate("/editmerchpage")
     }
 
     return (
@@ -36,19 +41,21 @@ const AddItemForm = () => {
 
                 <p> Produktnamn </p>
                 <label>
-                    <input type="text" value={name} placeholder="Döp produkten" 
+                    <input type="text" value={name} placeholder="Namnge Produkten" 
                     onChange={e => setName(e.target.value)} required />
+                    <p className="warning-text"> Du måste fylla i ett namn</p>
                 </label>
 
                 <p> Beskrivning </p>
                 <label>
                     <input type="text" value={description} placeholder="Beskriv produkten"
                     onChange={e => setDescription(e.target.value)} required />
+                    <p className="warning-text"> Du måste fylla i en beskrivning</p>
                 </label>
 
                 <p> Välj kategori</p>
                 <label>
-                    <input type="radio" name="category"
+                    <input className="radio-input" type="radio" name="category"
                     value="automat" onChange={categoryHandler} />
                     Automat
                 </label>
@@ -62,15 +69,17 @@ const AddItemForm = () => {
                 <label>
                     <input type="text" value={image} placeholder="url här"
                     onChange={e => setImage(e.target.value)} required />
+                    <p className="warning-text"> Du måste klistra in en url</p>
                 </label>
 
                 <p> Pris </p>
                 <label>
                     <input type="number" value={price} placeholder="123"
                     onChange={e => setPrice(e.target.value)} required />
+                    <p className="warning-text"> Du måste fylla i ett pris i siffror</p>
                 </label>
-                <br/>
-                <button type="submit"> Spara </button>
+                
+                <button type="submit" > Spara </button>
 
 
             </form>
