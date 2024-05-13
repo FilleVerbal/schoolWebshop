@@ -12,17 +12,38 @@ const useStore = create(set => ({
         const updatedMerch = state.merch.map((item) => item.key === updatedItem.key ? updatedItem : item)
         return {merch: updatedMerch}
     }),
-    sortMerchAlphabetically: () => [...useStore.getState().merch].sort((a,b) => {
-        if (a.name < b.name) {
-            return -1;
-        } else if (a.name > b.name) {
-            return 1
-        } else {
-            return 0;
-        }    
-    }),
-    sortMerchByPrice: () => [...useStore.getState().merch].sort((a, b) => a.price - b.price),
+    isAscendingAlphabet : false,
+    isAscendingPrice: false,
+    toggleSortOrderAlphabet: () => {
+        set(state => ({ isAscendingAlphabet: !state.isAscendingAlphabet }));
+    },
+    toggleSortOrderPrice: () => {
+        set(state => ({ isAscendingPrice: !state.isAscendingPrice }));
+    },
+    sortMerchAlphabetically: () => {
+        const isAscending = useStore.getState().isAscendingAlphabet
+        return [...useStore.getState().merch].sort((a,b) => {
+            if (a.name < b.name) {
+                return isAscending ? -1 : 1;
+            } else if (a.name > b.name) {
+                return isAscending ? 1 : -1
+            } else {
+                return 0;
+            }    
+            
+        })
+    } ,
+    sortMerchByPrice: () => {
+        const isAscending = useStore.getState().isAscendingPrice;
+        return [...useStore.getState().merch].sort((a, b) =>
+            isAscending ? a.price - b.price : b.price - a.price)
+    },
     sortMerch: (sortBy) => {
+        if (sortBy === "alphabet") {
+            useStore.getState().toggleSortOrderAlphabet();
+        } else {
+            useStore.getState().toggleSortOrderPrice();
+        }
         const sortedItems = sortBy === "alphabet"
         ? useStore.getState().sortMerchAlphabetically()
         : useStore.getState().sortMerchByPrice()
