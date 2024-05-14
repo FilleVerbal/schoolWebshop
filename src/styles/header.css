@@ -1,5 +1,6 @@
 .the-header {
-    width: 800px;
+    width: 100%;
+    min-width: 320px;
     max-width: 100%;
     position: sticky;
     top: 0;
@@ -9,37 +10,55 @@
     background-color: var(--primary-color);
     font-family: var(--font-family);
     border-radius: 0 0 10px 10px;
-  }
+}
+.header-stretch {
+  display: flex;
+  flex-grow: 1;
+}
   
-  .header-top-row {
+.header-top-row {
     display: flex; 
     justify-content: space-between;
     align-items: center; 
     margin-bottom: 1rem; 
-  }
-  .header-bottom-row {
+}
+.header-bottom-row {
     display: flex; 
     justify-content: space-around;
-  }
+}
   
-  .header-bottom-row button {
+.header-bottom-row button {
     padding: 0.5rem 1rem;
     border: 1px solid #434242;
     cursor: pointer;
     background-color: var(--secondary-color);
     border-radius: 10px;
     color: var(--tertiary-color);
-  }
+}
   
-  .header-bottom-row input {
+.header-bottom-row input {
     padding: 0.5rem 0.5rem;
     border: 1px solid #ccc;
     border-radius: 10px;
     text-align: center;
     background-color: var(--tertiary-color);
     flex-shrink: 2;
-  }
-  .header-link-text {
+}
+  /* @keyframes colorChange {
+    0% {
+      color: var(--tertiary-color);
+    }
+    50% {
+      color: var(--secondary-color);
+    }
+    100% {
+      color: var(--tertiary-color);
+    }
+  } */
+  
+.header-link-text {
     text-decoration: none;
     color: inherit;
-  }
+    /* animation: colorChange 10s infinite; */
+}
+@media (max-width)

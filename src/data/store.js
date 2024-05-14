@@ -52,6 +52,7 @@ const useStore = create(set => ({
         }))
     },
     cartItems: [],
+    setCartItems: (items) => set({cartItems: items}),
     addCartItem: (item) => set(state => ({
         cartItems: [...state.cartItems, item]
     })),
