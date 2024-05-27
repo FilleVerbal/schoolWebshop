@@ -24,7 +24,7 @@ const AddItemForm = () => {
             description,
             category,
             image,
-            price
+            price: Number(price)
         }
         addMerch(merchItem)
         addMerchItemZ(merchItem)
